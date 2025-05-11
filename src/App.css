@@ -1,38 +1,51 @@
-.App {
-  text-align: center;
+/* Additional custom CSS beyond Tailwind */
+
+/* Smooth transitions for UI elements */
+button,
+input,
+select,
+textarea {
+  transition: all 0.2s ease-in-out;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Add some subtle shadows to cards */
+.shadow-md {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Improve focus visibility for accessibility */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Custom styling for number inputs to remove the spinner arrows */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-.App-link {
-  color: #61dafb;
+/* Firefox support for removing number input spinners */
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Add smooth animations for tab transitions */
+.tab-content {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Hover effect for table rows */
+tbody tr:hover {
+  background-color: rgba(243, 244, 246, 0.8);
+}
+
+/* Custom styling for checkboxes */
+input[type="checkbox"] {
+  cursor: pointer;
 }

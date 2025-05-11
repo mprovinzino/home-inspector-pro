@@ -21,6 +21,7 @@ const PropertyDetails = ({ property, onPropertyChange }) => {
                 value={property.address}
                 onChange={(e) => onPropertyChange("address", e.target.value)}
                 className="w-full p-2 border border-gray-300 rounded bg-gray-100"
+                readOnly
               />
             </div>
           </div>
@@ -80,27 +81,6 @@ const PropertyDetails = ({ property, onPropertyChange }) => {
           </div>
         </div>
         
-        {/* Market Row */}
-        <div className="mb-4">
-          <div className="grid grid-cols-12 gap-2 items-center">
-            <div className="col-span-3 bg-teal-700 text-white p-2 text-center font-medium rounded-l">
-              Market
-            </div>
-            <div className="col-span-7">
-              <select 
-                value={property.market}
-                onChange={(e) => onPropertyChange("market", e.target.value)}
-                className="w-full p-2 border border-gray-300 rounded bg-gray-100"
-              >
-                {MARKETS.map(market => (
-                  <option key={market} value={market}>{market}</option>
-                ))}
-              </select>
-            </div>
-            <div className="col-span-2 text-red-500 text-right">← INPUT</div>
-          </div>
-        </div>
-        
         {/* House sqft Row */}
         <div className="mb-4">
           <div className="grid grid-cols-12 gap-2 items-center">
@@ -112,4 +92,70 @@ const PropertyDetails = ({ property, onPropertyChange }) => {
                 type="number"
                 value={property.sqft}
                 onChange={(e) => onPropertyChange("sqft", parseInt(e.target.value))}
-                className="w-full p-2 bo
+                className="w-full p-2 border border-gray-300 rounded bg-gray-100"
+              />
+            </div>
+            <div className="col-span-2 text-red-500 text-right">← INPUT</div>
+          </div>
+        </div>
+        
+        {/* Monthly Rent Row */}
+        <div className="mb-4">
+          <div className="grid grid-cols-12 gap-2 items-center">
+            <div className="col-span-3 bg-teal-700 text-white p-2 text-center font-medium rounded-l">
+              Monthly Rent
+            </div>
+            <div className="col-span-7">
+              <input 
+                type="number"
+                value={property.monthlyRent}
+                onChange={(e) => onPropertyChange("monthlyRent", parseInt(e.target.value))}
+                className="w-full p-2 border border-gray-300 rounded bg-gray-100"
+              />
+            </div>
+            <div className="col-span-2 text-red-500 text-right">← INPUT</div>
+          </div>
+        </div>
+        
+        {/* Damages Row */}
+        <div className="mb-4">
+          <div className="grid grid-cols-12 gap-2 items-center">
+            <div className="col-span-3 bg-teal-700 text-white p-2 text-center font-medium rounded-l">
+              Damages (Manual)
+            </div>
+            <div className="col-span-7">
+              <input 
+                type="number"
+                value={property.damages}
+                onChange={(e) => onPropertyChange("damages", parseInt(e.target.value))}
+                className="w-full p-2 border border-gray-300 rounded bg-gray-100"
+              />
+            </div>
+            <div className="col-span-2 text-red-500 text-right">← Optional INPUT</div>
+          </div>
+        </div>
+        
+        {/* Est ARV Row */}
+        <div className="mb-2">
+          <div className="grid grid-cols-12 gap-2 items-center">
+            <div className="col-span-3 bg-teal-700 text-white p-2 text-center font-medium rounded-l">
+              Est ARV
+            </div>
+            <div className="col-span-7">
+              <input 
+                type="number"
+                value={property.estARV}
+                onChange={(e) => onPropertyChange("estARV", parseInt(e.target.value))}
+                className="w-full p-2 border border-gray-300 rounded bg-gray-100"
+              />
+            </div>
+            <div className="col-span-2 text-red-500 text-right">← INPUT</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default PropertyDetails;
+
